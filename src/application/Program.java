@@ -1,18 +1,22 @@
 package application;
 
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-import model.entities.Department;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import db.DB;
 import model.entities.Seller;
 
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
-		Department obj = new Department(1, "Books");
+		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		Seller seller = new Seller(21, "Breno", "@filho da puta", new Date(), 4511.5, obj);
-		System.out.println(obj+"\n"+seller);
+		Seller seller = sellerDao.findById(5);
+		
+		System.out.println(seller);
 	}
 
 }
