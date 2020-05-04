@@ -36,9 +36,8 @@ public class Program {
 		Department department = new Department(2, null);
 		
 		System.out.println("Teste4 === seller Insert ===");
-		Seller seller = new Seller(null, "Groggg", "groggg@", new Date(), 455.50, department);
-		sellerDao.insert(seller);
-		System.out.println(seller.getId());
+		Seller seller = new Seller(9, "Broooob", "groggg@", new Date(), 455.50, department);
+		sellerDao.deleteById(4);
 		
 	}
 
